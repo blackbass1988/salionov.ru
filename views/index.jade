@@ -3,3 +3,8 @@ extends layout
 block content
   h1 Welcome
   p My Name is Oleg Salionov. It's my personal page
+  #contacts
+    contacts = {Twitter: "http://twitter.com/salionov", LinkedIn: "http://www.linkedin.com/profile/view?id=217090139",  Facebook: "https://www.facebook.com/salionov"}
+    each url, key in contacts
+      span 
+        a(href='#{url}') #{key}
