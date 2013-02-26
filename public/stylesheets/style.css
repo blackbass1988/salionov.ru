@@ -5,3 +5,8 @@ body {
 a {
   color: #00b7ff;
 }
+#contacts {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+}
