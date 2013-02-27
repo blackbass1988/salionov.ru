@@ -2,6 +2,10 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+div#container {
+  width: 50%;
+  margin: 0 auto;
+}
 a {
   color: #00b7ff;
 }
@@ -9,4 +13,14 @@ a {
   position: absolute;
   bottom: 0;
   margin-bottom: 20px;
+}
+div#left {
+  float: left;
+}
+div#right {
+  margin-left: 20px;
+  background: url("http://www.gravatar.com/avatar/b0c0d9f448eb6eb9c5b32ce56f72e21f?s=200");
+  width: 200px;
+  height: 200px;
+  float: left;
 }
