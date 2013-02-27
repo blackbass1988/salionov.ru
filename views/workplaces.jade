@@ -1,0 +1,19 @@
+extends layout 
+block content
+  h1 My workplaces   
+  div#breadcrumbs
+    each a in bread
+      - if (a.href)
+          span
+            a(href='#{a.href}') #{a.text}
+            |  >> 
+      - else
+        span #{a.text} 
+  
+  div#workplaces-container
+    ul
+      each a in jobs
+        li
+          span.workplace-time #{a.time}
+          span.workplace-name #{a.name}
+          span.workplace-descr (#{a.descr})
