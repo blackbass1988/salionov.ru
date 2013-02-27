@@ -6,3 +6,8 @@ html
   body
     div#container
       block content
+      #contacts
+        contacts = {Twitter: "http://twitter.com/salionov", LinkedIn: "http://www.linkedin.com/profile/view?id=217090139", Facebook: "https://www.facebook.com/salionov", GitHub: "https://github.com/blackbass1988"}
+        each url, key in contacts
+          span
+            a(href='#{url}') #{key}
