@@ -24,3 +24,12 @@ div#right {
   height: 200px;
   float: left;
 }
+div#workplaces-container ul {
+  list-style-type: none;
+}
+div#workplaces-container span {
+  margin-right: 5px;
+}
+span.workplace-name {
+  font-weight: bold;
+}
