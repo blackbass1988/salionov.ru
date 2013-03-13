@@ -16,8 +16,11 @@ else
         else
             page.paperSize = { format: system.args[3], orientation: 'portrait', border: '1cm' }
     page.open address, (status) ->
+   
         if status isnt 'success'
             console.log 'Unable to load the address!'
             phantom.exit()
         else
+            page.evaluate () ->
+                document.body.bgColor = 'white'
             window.setTimeout (-> page.render output; phantom.exit()), 2000
