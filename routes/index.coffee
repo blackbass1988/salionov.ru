@@ -49,12 +49,16 @@ exports.makeShot = (req, res) ->
         fs = require 'fs'
         util = require 'util'
         filePath = path.join process.cwd(), file
-        stat = fs.statSync filePath
-        res.setHeader "Content-Length", stat.size
-        res.setHeader "Content-Disposition", "attachment; filename=\"#{file}\""
-        readStream = fs.createReadStream filePath
-        util.pump(readStream, res)
-        fs.unlink file
+        try
+            stat = fs.statSync filePath
+            res.setHeader "Content-Length", stat.size
+            res.setHeader "Content-Disposition", "attachment; filename=\"#{file}\""
+            readStream = fs.createReadStream filePath
+            util.pump(readStream, res)
+            fs.unlink file
+        catch error
+            console.log error
+            res.redirect '/shot'
         return true
     )
     return true
