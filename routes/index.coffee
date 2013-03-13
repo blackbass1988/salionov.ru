@@ -14,3 +14,33 @@ exports.workplaces = (req, res) ->
             {name: 'Drom.ru', descr: 'PHP, NodeJS, MySQL, Mongo', time: '2013...'}
         ]
     }
+exports.links = (req, res) ->
+    res.render 'links', {title: 'Little things'}
+
+exports.screenshot = (req, res) ->
+    res.render 'screenshot', {title: 'Web screenshot'}
+
+exports.makeShot = (req, res) ->
+    spawn = require('child_process').spawn
+    url = req.body.url
+    bin = 'phantomjs'
+    script = 'rastorize.coffee'
+    file = Math.random(1, 1000) + ".png"
+    args = [script, url, file]
+    console.log 1
+    phtm = spawn bin, args
+    console.log 2
+    phtm.on('exit', () ->
+        path = require 'path'
+        fs = require 'fs'
+        util = require 'util'
+        filePath = path.join process.cwd(), file
+        stat = fs.statSync filePath
+        res.setHeader "Content-Length", stat.size
+        res.setHeader "Content-Disposition", "attachment; filename=\"#{file}\""
+        readStream = fs.createReadStream filePath
+        util.pump(readStream, res)
+        fs.unlink file
+        return true
+    )
+    return true

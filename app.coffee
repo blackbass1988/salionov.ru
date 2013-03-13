@@ -38,6 +38,9 @@ app.configure 'production', () ->
 
 app.get '/', routes.index
 app.get '/workplaces', routes.workplaces
+app.get '/links', routes.links
+app.get '/shot', routes.screenshot
+app.post '/shot', routes.makeShot
 
 http.createServer(app).listen app.get('port'), () ->
     console.log "Express server listening on port #{app.get 'port'}"
