@@ -1,5 +1,5 @@
 block breadcrumbs
-  - if (typeof(bread) !== 'undefined')
+  - if (locals.bread)
     div#breadcrumbs
       each a in bread
         - if (a.href)
