@@ -5,6 +5,8 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     div#container
+      h1= title
+      include breadcrumbs
       block content
       #contacts
         contacts = {Twitter: "http://twitter.com/salionov", LinkedIn: "http://www.linkedin.com/profile/view?id=217090139", Facebook: "https://www.facebook.com/salionov", GitHub: "https://github.com/blackbass1988"}

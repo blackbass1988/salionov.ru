@@ -1,0 +1,10 @@
+block breadcrumbs
+  - if (typeof(bread) !== 'undefined')
+    div#breadcrumbs
+      each a in bread
+        - if (a.href)
+          span
+            a(href='#{a.href}') #{a.text}
+            | >>
+        - else
+          span #{a.text}

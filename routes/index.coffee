@@ -1,5 +1,5 @@
 exports.index = (req, res) ->
-    res.render 'index', {title: 'www.salionov.ru'}
+    res.render 'index', {title: 'HelloWorld!'}
 
 exports.workplaces = (req, res) ->
     res.render 'workplaces', {
@@ -15,10 +15,23 @@ exports.workplaces = (req, res) ->
         ]
     }
 exports.links = (req, res) ->
-    res.render 'links', {title: 'Little things'}
+    res.render 'links', {
+        title: 'Little things'
+        bread: [
+            {text: 'Main', href: '/'}
+            {text: 'Links'}
+        ]
+    }
 
 exports.screenshot = (req, res) ->
-    res.render 'screenshot', {title: 'Web screenshot'}
+    res.render 'screenshot', {
+        title: 'Make screenshot'
+        bread: [
+            {text: 'Main', href: '/'}
+            {text: 'Links', href: '/links'}
+            {text: 'Screenshotter'}
+        ]
+    }
 
 exports.makeShot = (req, res) ->
     spawn = require('child_process').spawn
