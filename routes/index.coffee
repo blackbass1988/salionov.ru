@@ -36,12 +36,12 @@ exports.screenshot = (req, res) ->
 exports.makeShot = (req, res) ->
     spawn = require('child_process').spawn
     url = req.body.url
-    url = 'http://' + url if url[0..4] isnt 'http'
+    url = 'http://' + url if url[0..3] isnt 'http'
     bin = 'phantomjs'
     script = 'rastorize.coffee'
     file = Math.random(1, 1000) + ".png"
     args = [script, url, file]
-    console.log 1
+    console.log args
     phtm = spawn bin, args
     console.log 2
     phtm.on('exit', () ->
