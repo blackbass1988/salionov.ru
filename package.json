@@ -1,14 +1,17 @@
 {
-  "name": "application-name",
+  "name": "salionov.ru",
+  "description": "home page",
+  "repository": "https://github.com/blackbass1988/salionov.ru",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app"
   },
   "dependencies": {
+    "coffee-script": "1.6.1",
     "express": "3.1.0",
-    "jade": "*",
-    "stylus": "*",
-    "phantomjs": "*"
+    "jade": "0.28.1",
+    "stylus": "0.32.0",
+    "phantomjs": "1.9"
   }
 }
