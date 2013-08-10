@@ -59,6 +59,4 @@ exports.makeShot = (req, res) ->
         catch error
             console.log error
             res.redirect '/shot'
-        return true
     )
-    return true

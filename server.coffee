@@ -46,5 +46,3 @@ app.post '/shot', routes.makeShot
 
 http.createServer(app).listen app.get('port'), () ->
     console.log "Express server listening on port #{app.get 'port'}"
-    true
-
