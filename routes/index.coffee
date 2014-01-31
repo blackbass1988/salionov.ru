@@ -1,5 +1,5 @@
 exports.index = (req, res) ->
-    res.render 'index', {title: 'HelloWorld!'}
+    res.render 'index', {title: 'Welcome to Salionov.ru'}
 
 exports.workplaces = (req, res) ->
     res.render 'workplaces', {
